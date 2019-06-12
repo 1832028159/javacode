@@ -1,4 +1,4 @@
 # javacode
-this is my private code
+This is my personal code
 
 这是我的个人代码
