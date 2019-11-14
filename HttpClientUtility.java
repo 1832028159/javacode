@@ -95,4 +95,16 @@ public class HttpClientUtility {
 		HttpEntity responseEntity = response.getEntity();
 		return responseEntity != null?EntityUtils.toString(responseEntity):null;
 	}
+	
+	public static void simpleGet(String url, String path) throws Exception{
+		CloseableHttpClient httpClient = HttpClients.createDefault();
+		HttpGet httpGet = new HttpGet(url);
+		CloseableHttpResponse response = httpClient.execute(httpGet);
+		HttpEntity responseEntity = response.getEntity();
+		byte[] bs= EntityUtils.toByteArray(responseEntity);
+		ByteBuffer bb = ByteBuffer.wrap(bs);
+		FileChannel fc = new FileOutputStream(path).getChannel();
+		fc.write(bb);
+		fc.close();
+	}
 }
