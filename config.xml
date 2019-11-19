@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<HibCool>
-	<BatchFile Status="InActive">wms-warehouse-table.xml</BatchFile>
-	<BatchFile Status="Active">wms-warehouse-table.xml</BatchFile>
-</HibCool>
