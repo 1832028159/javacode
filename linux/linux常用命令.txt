@@ -1,0 +1,99 @@
+linux常用命令：
+dd：剪切当前行
+yy：复制当前行 在需要粘贴的光标处按下p即可
+
+判断Linux是32位还是64位
+getconf LONG_BIT
+
+查看文件内容
+less 文件名（使用【pageup】和【pagedown】键进行前翻页和后翻页；退出查看页面，请按“q”键）
+
+强制删除文件
+rm -f abc.txt(f代表不提示)
+
+递归删除所有的子目录
+rm -rf abc
+
+在切换用户时，如果想在切换用户之后使用新用户的工作环境
+su - root
+
+Linux命令行下修改文件或文件夹名
+mv file1 file2
+
+解压
+1、*.tar 用 tar -xvf 解压
+
+2、*.gz 用 gzip -d或者gunzip 解压
+
+3、*.tar.gz和*.tgz 用 tar -xzf 解压
+
+4、*.bz2 用 bzip2 -d或者用bunzip2 解压
+
+5、*.tar.bz2用tar -xjf 解压
+
+6、*.Z 用 uncompress 解压
+
+7、*.tar.Z 用tar -xZf 解压
+
+8、*.rar 用 unrar e解压
+
+9、*.zip 用 unzip 解压
+
+按指定文件夹拆包解压，file.tar.gz。把file.tar.gz拆包解压到文件夹example中
+tar -zxvf file.tar.gz -C ./example
+
+按规则查找文件（查找包含profile的文件和目录）
+find ./ -regex .*profile.*
+
+查看tomcat进程是否启动
+ps -ef|grep java
+
+关闭tomcat+启动tomcat
+sh shutdown.sh
+sh startup.sh
+./startup.sh
+
+查看端口
+netstat -tunlp|grep 端口号
+
+启动相关的命令
+shutdown –h now 立马关机
+
+shutdown –h 20:25 系统会在今天20:25关机
+
+shutdown –h +10 十分钟后关机
+
+shutdown –r now 系统立马重启
+
+shutdown –r +10 系统十分钟后重启
+
+reboot 就是重启，等同于 shutdown –r now
+
+halt 关闭系统，等同于shutdown –h now 和 poweroff
+
+增加一个新的用户组使用groupadd命令
+groupadd group1
+
+usermod -G GROUPS USERNAME：改变用户的附加组，会完全替换原有的附加组
+usermod -G -a GROUPS USERNAME：在原有附加组的基础上追加附加组
+
+新建用户
+useradd -g testgroup user006
+
+chgrp：更改文件属主属组
+chgrp [-R] 属组名 文件名
+chown [-R] 属主名：属组名 文件名
+-R：递归更改文件属组
+
+删除帐号
+此命令删除用户sam在系统文件中（主要是/etc/passwd, /etc/shadow, /etc/group等）的记录，同时删除用户的主目录
+userdel -r sam 
+
+删除用户组
+groupdel groupname
+
+改变用户名
+usermod -l NEWNAME USERNAME
+
+linux发送邮件
+mail -s  "邮件主题" 1832028159@qq.com < user
